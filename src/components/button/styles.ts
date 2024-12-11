@@ -3,6 +3,19 @@ import { colors, fontFamily } from "@/styles/theme"
 import { IconContainer } from "@tabler/icons-react-native";
 
 export const styles = StyleSheet.create({
-    container: {},
-    title: {}
+    container: {
+        height: 56,
+        maxHeight: 56,
+        backgroundColor: colors.green.base,
+        borderRadius: 10,
+        alignItems: "center",
+        justifyContent: "center",
+        flexDirection: "row",
+        gap: '4,'
+    },
+    title: {
+        color: colors.gray[100],
+        fontFamily: fontFamily.semiBold,
+        fontSize: 16,
+    }
 })
