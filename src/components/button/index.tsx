@@ -5,10 +5,12 @@ import {
     TextProps,
     ActivityIndicator, 
 } from "react-native"
+import { IconProps as TablerIconProps } from "@tabler/icons-react-native"
 
 import { styles } from "./styles"
 import { colors } from "@/styles/theme"
 
+// Button
 type ButtonProps = TouchableOpacityProps & { 
     isLoading?: boolean
 }
@@ -30,6 +32,7 @@ function Button({children, style, isLoading = false, ...rest }: ButtonProps){
     )
 }
 
+// Title
 function Title({children}: TextProps){
     return <Text 
     style={styles.title}>
@@ -37,5 +40,16 @@ function Title({children}: TextProps){
     </Text>
 }
 
+// Icon
+type IconProps = { 
+    icon: React.ComponentType<TablerIconProps>
+}
+
+function Icon({ icon: Icon }: IconProps) {
+    return <Icon size={24} color={colors.gray[100]} />
+}
+
 Button.Title = Title
+Button.Icon = Icon
+
 export { Button }
